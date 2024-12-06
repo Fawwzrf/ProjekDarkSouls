@@ -1,0 +1,59 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('/Asset/DarkSoul/Background.png');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white
+}
+
+h1{
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 96px;
+    text-decoration: line-through 2px;
+}
+
+h3{
+    font-family: OptimusPrinceps;
+    font-size: 38px;
+    font-weight: 50;
+    margin-top: -20px;
+}
+
+.press{
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #FFD700;
+    -webkit-text-stroke: white 0.1px;
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.press:hover{
+    transform: scale(1.1);
+    text-shadow:  0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700;;
+}

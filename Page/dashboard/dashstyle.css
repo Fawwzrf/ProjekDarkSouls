@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/Asset/Register\ login/Backgroundd.png');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 163px;
+
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 163px;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: #060911;
+}
+
+.navtitle {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid white;
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+}
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 40px;
+    text-decoration: line-through 1px;
+    white-space: nowrap;
+}
+
+.img {
+    margin-left: auto;
+}
+
+.img img {
+    width: 55px;
+}
+
+.navmenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 63px;
+    gap: 20px;
+    list-style: none;
+}
+
+.navmenu ul {
+    display: flex;
+    padding: 0;
+    margin-top: 9px;
+    list-style: none;
+    gap: 250px;
+}
+
+.navmenu li {
+    font-family: Oranienbaum;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+}
+
+.navmenu li:hover {
+    color: #f4b400;
+}
+
+.content {
+    margin: 15% 5% 15% 5%;
+}
+
+#quiz {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Memusatkan elemen secara vertikal */
+    align-items: center;
+    /* Memusatkan elemen secara horizontal */
+    color: white;
+    text-align: center;
+}
+
+.quiz-title {
+    margin-bottom: 20px;
+    /* Memberikan jarak antara judul dan elemen lainnya */
+    text-align: center;
+    font-family: OptimusPrinceps;
+}
+
+.quiz-title h1 {
+    font-size: 70px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.quiz-title h3 {
+    font-size: 36px;
+    font-weight: 100;
+    margin: 0;
+}
+
+.btnquiz {
+    color: white;
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 24px;
+    padding: 3px 25px;
+    /* Menyatukan padding */
+    border-radius: 20px;
+    background-color: #432226;
+    margin: 20px 0;
+    /* Memberikan jarak antara tombol dan elemen lainnya */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnquiz:hover {
+    background-color: #5a2d2f;
+    /* Warna berubah saat di-hover */
+}
+
+.quiz-desk {
+    text-align: center;
+    font-family: quintessential;
+    font-size: 32px;
+    max-width: 600px;
+    /* Batas lebar teks agar tidak terlalu melebar */
+    margin: 0 auto;
+    /* Memastikan teks tetap di tengah */
+}
+
+.aboutcontain{
+    display: flex;
+    flex-wrap: wrap;
+    /* Membuat elemen tetap rapi jika layar lebih kecil */
+    align-items: center;
+    /* Rata vertikal elemen */
+    gap: 20px;
+    /* Jarak antara teks dan gambar */
+    color: white;
+    padding: 20px;
+}
+
+.abouttext {
+    flex: 1 1 60%;
+    width: 20%;
+    /* Mengatur teks mengambil 60% ruang, fleksibel */
+    text-align: left;
+}
+
+.aboutcontain h2 {
+    font-family: OptimusPrincepsSemiBold;
+    width: 100%;
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+.abouttext p {
+    font-family: Oranienbaum;
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.abouttext ol{
+    font-family: Oranienbaum;
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.btnabout {
+    margin-top: 20px;
+    /* Jarak atas tombol */
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 24px;
+    color: white;
+    background-color: rgba(255, 215, 0, 0.8);
+    border-radius: 20px;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnabout:hover {
+    background-color: rgba(255, 215, 0, 1);
+}
+
+.aboutimg {
+    flex: 1 1 30%;
+    width: 30%;
+    /* Mengatur gambar mengambil 40% ruang, fleksibel */
+    text-align: center;
+}
+
+.aboutimg img {
+    width: 100%;
+    height: auto;
+    /* Menjaga proporsi gambar */
+    max-width: 400px;
+    /* Membatasi lebar gambar maksimal */
+    display: inline-block;
+}

@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/Asset/Register\ login/Backgroundd.png');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(32, 32, 32,0.2);
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.border {
+    size-adjust: 1449px 1067px;
+    width: 99.5%;
+    position: absolute;
+    object-position: center;
+    z-index: -100;
+}
+
+.title {
+    text-align: center;
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 64px;
+    color: white;
+    text-decoration: line-through 2px;
+}
+
+table{
+    border-spacing: 10px;
+}
+
+table td{
+    font-family: Oranienbaum;
+    font-size: 32px;
+    color:white;
+}
+
+table img{
+    padding: 10px;
+}
+
+table input{
+    margin-left: 100px;
+    padding: 10px;
+    width: 250px;
+}
+
+.login{
+    text-align: center;
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 32px;
+    background-color: #FFD700;
+    color: white;
+    padding-left: 70px;
+    padding-right: 70px;
+    border-radius: 20px;
+    margin: 50px;
+}
+
+.akun{
+    display: flex;
+    font-size: 16px;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: -100px;
+}
+
+.register{
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 10px;
+    background-color: #FFD700;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+}

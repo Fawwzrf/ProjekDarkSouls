@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/Asset/Profile/Background.png');
+    background-color: black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h1{
+    text-align: center;
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 64px;
+    color: white;
+    text-decoration: line-through 2px;
+    margin: 1%;
+    margin-left: 5%;
+}
+
+.border{
+    width: 100%;
+    height: auto;
+    margin: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-img{
+    position: absolute;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+    z-index: -100;
+}
+
+.border-profil{
+    position: absolute;
+    background-color: gainsboro;
+    border-radius: 50%;
+    border-style: none;
+    width: 17%;
+    top: 22%;
+    left: 43%;
+    z-index: -99;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 19%;
+    margin-left: -13%;
+}
+
+table{
+    border-spacing: 5px;
+}
+
+p{
+    font-family: oranienbaum;
+    font-size: 32px;
+    color: white;
+    margin-left: -100px;
+}
+
+.btnstart {
+    color: white;
+    font-family: OptimusPrincepsSemiBold;
+    font-size: 24px;
+    padding: 3px 25px;
+    /* Menyatukan padding */
+    border-radius: 20px;
+    margin-top: 10%;
+    background-color: #432226;
+    /* Memberikan jarak antara tombol dan elemen lainnya */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnstart:hover {
+    background-color: #5a2d2f;
+    /* Warna berubah saat di-hover */
+}
