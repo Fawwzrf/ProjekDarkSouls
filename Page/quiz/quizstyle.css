@@ -10,7 +10,27 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: 1px;
+    background-position-y: 0.065vmax;
+}
+
+@font-face {
+    font-family: 'OptimusPrincepsSemiBold';
+    src: url('/Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OptimusPrinceps';
+    src: url('/Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oranienbaum';
+    src: url('/Asset/Video&Font/Oranienbaum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Papyrus';
+    src: url('/Asset/Video&Font/papyrus.ttf') format('truetype');
 }
 
 .container {
@@ -19,20 +39,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.container h1{
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 64px;
-    text-decoration: line-through 1px;
-    margin: 3%;
+.container h1 {
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 4.167vmax;
+    text-decoration: line-through 0.065vmax;
+    position: absolute;
+    top: 10vh;
 }
 
-.question{
-    font-family: oranienbaum;
-    font-size: 48px;
-    margin-top: 20%;
-    padding: 5px 50px 5px 50px;
-    border-radius: 20px;
-    background-color: rgba(146, 140, 140, 0.5)
+.question {
+    font-family: 'Oranienbaum';
+    font-size: 3.125vmax;
+    padding: 0.326vmax 3.255vmax 0.326vmax 3.255vmax;
+    border-radius: 1.302vmax;
+    background-color: rgba(146, 140, 140, 0.5);
+    margin-top: -5vmax;
 }

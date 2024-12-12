@@ -24,28 +24,50 @@
                         <tr>
                             <td><img src="/Asset/Register login/mahkota.png" alt=""></td>
                             <td>Username</td>
-                            <td><input type="text" name="" id="username"></td>
+                            <td><input type="text" id="username"></td>
                         </tr>
                         <tr>
                             <td><img src="/Asset/Register login/tameng.png" alt=""></td>
                             <td>Password</td>
-                            <td><input type="password" name="" id="password"></td>
+                            <td><input type="password" id="password"></td>
                         </tr>
                         <tr>
                             <td><img src="/Asset/Register login/Pedang.png" alt="" id="pdg"></td>
                             <td>Email</td>
-                            <td><input type="text" name="" id="email"></td>
+                            <td><input type="text" id="email"></td>
                         </tr>
                     </table>
-                    <button class="register"type="button" onclick="location.href='/Page/login/login.html'">Register</button>
+                    <button class="register" type="button" id="register-btn">Register</button>
                 </form>
             </div>
             <div class="akun">
                 <p>Sudah punya akun?</p>
-                <button class="login" onclick="location.href='/Page/login/login.html'">Login</button>
+                <button class="login" id="login-btn">Login</button>
             </div>
         </div>
     </div>
+
+    <script>
+        const container = document.querySelector('.container');
+        const registerButton = document.getElementById('register-btn');
+        const loginButton = document.getElementById('login-btn');
+
+        // Handle Register button click
+        registerButton.addEventListener('click', () => {
+            container.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = '/Page/login/login.html';
+            }, 1000); // Durasi animasi keluar
+        });
+
+        // Handle Login button click
+        loginButton.addEventListener('click', () => {
+            container.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = '/Page/login/login.html';
+            }, 1000); // Durasi animasi keluar
+        });
+    </script>
 </body>
 
 </html>

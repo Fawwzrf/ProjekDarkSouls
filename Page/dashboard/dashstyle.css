@@ -10,17 +10,36 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-position-y: 163px;
+    background-position-y: 10.612vmax;
 
 }
 
+@font-face {
+    font-family: 'OptimusPrincepsSemiBold';
+    src: url('/Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OptimusPrinceps';
+    src: url('/Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oranienbaum';
+    src: url('/Asset/Video&Font/Oranienbaum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Papyrus';
+    src: url('/Asset/Video&Font/papyrus.ttf') format('truetype');
+}
 .nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 163px;
+    height: 10.612vmax;
     width: 100%;
-    padding: 10px;
+    padding: 0.651vmax;
     color: white;
     background-color: #060911;
 }
@@ -28,10 +47,10 @@ body {
 .navtitle {
     display: flex;
     align-items: center;
-    border-bottom: 2px solid white;
-    height: 100px;
+    border-bottom: 0.13vmax solid white;
+    height: 6.51vmax;
     width: 100%;
-    padding: 10px;
+    padding: 0.651vmax;
     position: relative;
 }
 
@@ -39,9 +58,9 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 40px;
-    text-decoration: line-through 1px;
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 2.604vmax;
+    text-decoration: line-through 0.065vmax;
     white-space: nowrap;
 }
 
@@ -50,29 +69,29 @@ body {
 }
 
 .img img {
-    width: 55px;
+    width: 3.581vmax;
 }
 
 .navmenu {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 63px;
-    gap: 20px;
+    height: 4.102vmax;
+    gap: 1.302vmax;
     list-style: none;
 }
 
 .navmenu ul {
     display: flex;
     padding: 0;
-    margin-top: 9px;
+    margin-top: 0.586vmax;
     list-style: none;
-    gap: 250px;
+    gap: 16.276vmax;
 }
 
 .navmenu li {
-    font-family: Oranienbaum;
-    font-size: 32px;
+    font-family: 'Oranienbaum';
+    font-size: 2.083vmax;
     color: white;
     cursor: pointer;
 }
@@ -81,11 +100,25 @@ body {
     color: #f4b400;
 }
 
-.content {
+.container{
+    height: 100vh;
+}
+
+.content-section {
     margin: 15% 5% 15% 5%;
 }
 
+.quizcontain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vmax;
+}
+
 #quiz {
+    margin: 10vmax;
+    margin-left: auto;
     height: auto;
     width: 100%;
     display: flex;
@@ -99,33 +132,33 @@ body {
 }
 
 .quiz-title {
-    margin-bottom: 20px;
+    margin-bottom: 1.302vmax;
     /* Memberikan jarak antara judul dan elemen lainnya */
     text-align: center;
-    font-family: OptimusPrinceps;
+    font-family: 'OptimusPrinceps';
 }
 
 .quiz-title h1 {
-    font-size: 70px;
+    font-size: 4.557vmax;
     font-weight: 100;
     margin: 0;
 }
 
 .quiz-title h3 {
-    font-size: 36px;
+    font-size: 2.344vmax;
     font-weight: 100;
     margin: 0;
 }
 
 .btnquiz {
     color: white;
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 24px;
-    padding: 3px 25px;
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 1.563vmax;
+    padding: 0.195vmax 1.628vmax;
     /* Menyatukan padding */
-    border-radius: 20px;
+    border-radius: 1.302vmax;
     background-color: #432226;
-    margin: 20px 0;
+    margin: 1.302vmax 0;
     /* Memberikan jarak antara tombol dan elemen lainnya */
     border: none;
     cursor: pointer;
@@ -137,26 +170,26 @@ body {
     /* Warna berubah saat di-hover */
 }
 
-.quiz-desk {
+.quiz-desk p{
     text-align: center;
     font-family: quintessential;
-    font-size: 32px;
-    max-width: 600px;
+    font-size: 2.083vmax;
+    max-width: 39.063vmax;
     /* Batas lebar teks agar tidak terlalu melebar */
     margin: 0 auto;
     /* Memastikan teks tetap di tengah */
 }
 
-.aboutcontain{
+.aboutcontain {
     display: flex;
     flex-wrap: wrap;
     /* Membuat elemen tetap rapi jika layar lebih kecil */
     align-items: center;
     /* Rata vertikal elemen */
-    gap: 20px;
+    gap: 1.302vmax;
     /* Jarak antara teks dan gambar */
     color: white;
-    padding: 20px;
+    padding: 1.302vmax;
 }
 
 .abouttext {
@@ -167,37 +200,37 @@ body {
 }
 
 .aboutcontain h2 {
-    font-family: OptimusPrincepsSemiBold;
+    font-family: 'OptimusPrincepsSemiBold';
     width: 100%;
-    font-size: 70px;
-    margin-bottom: 20px;
+    font-size: 4.557vmax;
+    margin-bottom: 1.302vmax;
 }
 
 .abouttext p {
     font-family: Oranienbaum;
-    font-size: 24px;
+    font-size: 1.563vmax;
     line-height: 1.5;
     margin: 0;
 }
 
-.abouttext ol{
+.abouttext ol {
     font-family: Oranienbaum;
-    font-size: 24px;
+    font-size: 1.563vmax;
     line-height: 1.5;
     margin: 0;
-    margin-left: 25px;
-    margin-top: 10px;
+    margin-left: 1.628vmax;
+    margin-top: 0.651vmax;
 }
 
 .btnabout {
-    margin-top: 20px;
+    margin-top: 1.302vmax;
     /* Jarak atas tombol */
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 24px;
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 1.563vmax;
     color: white;
     background-color: rgba(255, 215, 0, 0.8);
-    border-radius: 20px;
-    padding: 10px 25px;
+    border-radius: 1.302vmax;
+    padding: 0.651vmax 1.628vmax;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -218,7 +251,226 @@ body {
     width: 100%;
     height: auto;
     /* Menjaga proporsi gambar */
-    max-width: 400px;
+    max-width: 26.042vmax;
     /* Membatasi lebar gambar maksimal */
     display: inline-block;
+}
+
+body.active-profile {
+    background:
+            linear-gradient(135deg, #0C0C0D 0%, transparent 100%),
+            linear-gradient(135deg, #1E1E1E 0%, transparent 100%),
+            linear-gradient(135deg, #BFAF5F 80%, transparent 28%),
+            linear-gradient(135deg, #A38949 100%, transparent 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 10.612vmax;
+}
+
+.profile-container {
+    display: flex;
+    margin-top: -14.8vmax;
+    height: 100vh;
+}
+
+.left {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.border {
+    width: 100%;
+    height: auto;
+}
+
+.border-container img {
+    position: absolute;
+    width: 50vmax;
+    margin-top: 7vmax;
+    margin-left: -10vmax;
+    z-index: -99;
+}
+
+.border-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10vmax;
+    margin-top: 21vmax;
+}
+
+.content-char img {
+    width: 14vmax;
+    height: auto;
+}
+
+table {
+    border-spacing: 0.326vmax;
+}
+
+td img {
+    width: 3vmax;
+}
+
+p {
+    font-family: oranienbaum;
+    font-size: 1.5vmax;
+    color: white;
+    margin-left: -5vmax;
+}
+
+.btnstartagn {
+    color: white;
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 1vmax;
+    padding: 0.195vmax 1.628vmax;
+    /* Menyatukan padding */
+    border-radius: 1.302vmax;
+    margin-top: 10%;
+    background-color: #432226;
+    /* Memberikan jarak antara tombol dan elemen lainnya */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btnedit:hover {
+    background-color: #5a2d2f;
+    /* Warna berubah saat di-hover */
+}
+
+.cov-name-left{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    gap: 6vmax;
+    align-items: center;
+    margin: 3.5vmax;
+    margin-bottom: 1.5vmax;
+    margin-left: -2vmax;
+    background:rgba(11, 11, 11, 0.5);
+    border-radius: 20px;
+    padding: 0.5vmax 2vmax;
+}
+
+.cov-name-left p{
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 2.083vmax;
+}
+
+.cov-name-left img{
+    width: 3vmax;
+}
+
+.right {
+    width: 60%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-left: solid white;
+}
+
+.right-top{
+    display: flex;
+    justify-content:space-between;
+    gap: 8vmax;
+    align-items: center;
+    margin-right: -5vmax;
+    margin-top: -1vmax;
+}
+
+.logo img{
+    width: 13vmax;
+}
+
+.covenant{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: -5vmax;
+}
+
+.cov-name{
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 2.083vmax;
+    text-align: center;
+}
+
+.nickname{
+    font-family: Papyrus;
+    font-size: 1.628vmax;
+    text-align: center;
+}
+
+.logo{
+    margin: 1vmax;
+}
+
+.right-mid{
+    margin-right: -10vmax;
+    margin-top: -2vmax;
+}
+
+.welcome{
+    display: flex;
+    justify-content:center;
+    width: auto;
+    gap: 1.5vmax;
+}
+
+.welcome p{
+    font-family: 'Papyrus';
+    padding: 2vmax;
+}
+
+.cov-desk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45vmax;
+    height: 10vmax;
+    margin-top: -3vmax;
+}
+
+.cov-desk p{
+    font-family: Neucha;
+}
+
+.right-bottom{
+    display: flex;
+    flex-direction: column;
+    margin-right: -10vmax;
+}
+
+.cov-alliance{
+    display: flex;
+    gap: 3vmax;
+    margin-top: 2vmax;
+}
+
+.cov-alliance img{
+    width: 14vmax;
+    height: 15vmax;
+}
+
+.content-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    display: none;
+}
+
+.content-section.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+    /* Tampilkan bagian aktif */
 }

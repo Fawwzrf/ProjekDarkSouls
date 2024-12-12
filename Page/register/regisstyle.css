@@ -17,6 +17,38 @@ body {
     align-items: center;
     height: 100vh;
     background-color: rgba(32, 32, 32, 0.2);
+    animation: rise-in 1s ease-out forwards;
+}
+
+/* Transisi masuk (rise-in) */
+@keyframes rise-in {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Transisi keluar (move-up) */
+@keyframes move-up {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* Efek fade-out */
+.fade-out {
+    animation: move-up 1s ease-out forwards;
 }
 
 .content {
@@ -24,7 +56,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white
+    color: white;
 }
 
 form {
@@ -35,7 +67,7 @@ form {
 }
 
 .border {
-    size-adjust: 1449px 1067px;
+    size-adjust: 94.336vmax 69.466vmax;
     width: 99.5%;
     position: absolute;
     object-position: center;
@@ -44,59 +76,59 @@ form {
 
 .title {
     text-align: center;
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 64px;
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 4.167vmax;
     color: white;
-    text-decoration: line-through 2px;
+    text-decoration: line-through 0.13vmax;
 }
 
 table {
     width: 100%;
-    border-spacing: 10px;
+    border-spacing: 0.651vmax;
 }
 
 table td {
-    font-family: Oranienbaum;
-    font-size: 32px;
+    font-family: 'Oranienbaum';
+    font-size: 2.083vmax;
     color: white;
 }
 
 #pdg {
-    margin-left: 25px;
+    margin-left: 1.628vmax;
 }
 
 table input {
-    margin-left: 100px;
-    padding: 10px;
-    width: 250px;
+    margin-left: 6.51vmax;
+    padding: 0.651vmax;
+    width: 16.276vmax;
 }
 
 .register {
     text-align: center;
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 32px;
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 2.083vmax;
     background-color: #FFD700;
     color: white;
-    padding-left: 70px;
-    padding-right: 70px;
-    border-radius: 20px;
-    margin: 50px;
+    padding-left: 4.557vmax;
+    padding-right: 4.557vmax;
+    border-radius: 1.302vmax;
+    margin: 3.255vmax;
 }
 
 .akun {
     display: flex;
-    font-size: 16px;
-    gap: 5px;
+    font-size: 1.042vmax;
+    gap: 0.326vmax;
     margin-left: auto;
-    margin-right: -100px;
+    margin-right: -6.51vmax;
 }
 
 .login {
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 10px;
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 0.651vmax;
     background-color: #FFD700;
     color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 20px;
+    padding-left: 0.651vmax;
+    padding-right: 0.651vmax;
+    border-radius: 1.302vmax;
 }

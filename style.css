@@ -1,59 +1,89 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-image: url('/Asset/DarkSoul/Background.png');
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
-.container{
+@font-face {
+    font-family: 'OptimusPrincepsSemiBold';
+    src: url('/Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OptimusPrinceps';
+    src: url('/Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
+}
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
 }
 
-.title-box{
+.container.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.title-box {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: white
+    color: white;
 }
 
-h1{
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 96px;
-    text-decoration: line-through 2px;
+h1 {
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 6.25vmax;
+    text-decoration: line-through 0.25vmax;
 }
 
-h3{
-    font-family: OptimusPrinceps;
-    font-size: 38px;
+h3 {
+    font-family: 'OptimusPrinceps';
+    font-size: 2.474vmax;
     font-weight: 50;
-    margin-top: -20px;
+    margin-top: -1.302vmax;
 }
 
-.press{
-    font-family: OptimusPrincepsSemiBold;
-    font-size: 24px;
+.press {
+    font-family: 'OptimusPrincepsSemiBold';
+    font-size: 1.563vmax;
     background: none;
     border: none;
     color: #FFD700;
-    -webkit-text-stroke: white 0.1px;
-    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+    -webkit-text-stroke: white 0.007vmax;
+    text-shadow: 0 0 0.651vmax #FFD700, 0 0 1.302vmax #FFD700, 0 0 1.953vmax #FFD700;
     transition: all 0.3s ease;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 1.953vmax;
 }
 
-.press:hover{
+.press:hover {
     transform: scale(1.1);
-    text-shadow:  0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700;;
+    text-shadow: 0 0 1.302vmax #FFD700, 0 0 1.953vmax #FFD700, 0 0 2.604vmax #FFD700, 0 0 3.255vmax #FFD700;
+}
+
+.press.fade-out {
+    transform: scale(1.5);
+    text-shadow: 0 0 2vmax #FFD700, 0 0 4vmax #FFD700, 0 0 6vmax rgba(255, 215, 0, 0);
+    opacity: 0;
+    transition: all 0.8s ease-in-out;
 }

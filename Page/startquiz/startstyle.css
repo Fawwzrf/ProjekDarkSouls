@@ -12,87 +12,168 @@ body {
     background-position: center;
 }
 
-.container{
+.container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 160vh;
 }
 
-.container h1{
+.title {
+    position: absolute;
     text-align: center;
     font-family: OptimusPrincepsSemiBold;
-    font-size: 64px;
+    font-size: 4.167vmax;
     color: white;
-    text-decoration: line-through 2px;
-    margin: 1%;
-    margin-left: 5%;
+    text-decoration: line-through 0.13vmax;
+    top: 2vmax;
+    opacity: 0; /* Awal tidak terlihat */
+    animation: fade-in 1s ease-out 2.5s forwards; /* Muncul memudar setelah content selesai */
 }
 
-.border{
+.border {
     width: 100%;
     height: auto;
-    margin: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.border-img{
+.border-img {
     position: absolute;
-    width: 85%;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 10%;
+    width: 100vmax;
     z-index: -100;
+    margin-top: 45vmax;
+    animation: slide-in-bounce 1.5s ease-out forwards;
 }
 
-.border-profil{
-    position: absolute;
-    background-color: gainsboro;
-    border-radius: 50%;
-    border-style: none;
-    width: 17%;
-    top: 22%;
-    left: 43%;
-    z-index: -99;
-}
-
-.content{
+.content {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 19%;
     margin-left: -13%;
+    margin-top: 22vmax;
+    opacity: 0; /* Awal tidak terlihat */
+    animation: fade-in 1s ease-out 1.5s forwards; /* Muncul memudar setelah border selesai */
 }
 
-table{
-    border-spacing: 5px;
+.content-char img {
+    width: 24vmax;
+    height: auto;
 }
 
-p{
+table {
+    border-spacing: 0.326vmax;
+}
+
+td img {
+    width: 4vmax;
+}
+
+p {
     font-family: oranienbaum;
-    font-size: 32px;
+    font-size: 2.083vmax;
     color: white;
-    margin-left: -100px;
+    margin-left: -6.51vmax;
 }
 
 .btnstart {
     color: white;
     font-family: OptimusPrincepsSemiBold;
-    font-size: 24px;
-    padding: 3px 25px;
-    /* Menyatukan padding */
-    border-radius: 20px;
+    font-size: 1.563vmax;
+    padding: 0.195vmax 1.628vmax;
+    border-radius: 1.302vmax;
     margin-top: 10%;
     background-color: #432226;
-    /* Memberikan jarak antara tombol dan elemen lainnya */
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    z-index: 2;
 }
 
 .btnstart:hover {
     background-color: #5a2d2f;
-    /* Warna berubah saat di-hover */
+}
+
+/* Animasi slide-in dengan memantul */
+/* Animasi slide-in dengan memantul */
+@keyframes slide-in-bounce {
+    0% {
+        transform: translateY(-100%);
+        /* Mulai dari atas */
+        opacity: 0;
+        /* Tidak terlihat */
+    }
+
+    80% {
+        transform: translateY(0);
+        /* Posisi akhir */
+        opacity: 1;
+        /* Terlihat */
+    }
+
+    90% {
+        transform: translateY(-5%);
+        /* Memantul sedikit */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* Kembali ke posisi akhir */
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Efek blur dan memudar */
+.container.fade-out::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 30%, rgba(0, 0, 0, 0.8) 70%);
+    filter: blur(10px);
+    z-index: 1;
+    pointer-events: none;
+    animation: blur-effect 3s forwards;
+}
+
+/* Tombol tetap terlihat */
+.btnstart {
+    z-index: 2;
+    position: relative;
+}
+
+/* Animasi memudar seluruh container */
+@keyframes blur-effect {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-all {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.container.fade-out {
+    animation: fade-all 3s forwards;
 }

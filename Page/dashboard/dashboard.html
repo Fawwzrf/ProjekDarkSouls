@@ -11,8 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Quintessential&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Quintessential&display=swap"rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Oranienbaum&family=Quintessential&display=swap"rel="stylesheet">
 </head>
 
 <body>
@@ -34,6 +36,7 @@
         </div>
         <div class="content">
             <div id="quiz" class="content-section">
+                <div class="quizcontain">
                 <div class="quiz-title">
                     <h1>Which Convenant</h1>
                     <h3>Do You Belong To?</h3>
@@ -42,6 +45,7 @@
                 <div class="quiz-desk">
                     <p>Are you destinted be a blade of vengance</p>
                     <p>or a someone on the flame</p>
+                </div>
                 </div>
             </div>
             <div id="about" class="content-section">
@@ -86,25 +90,117 @@
                 </div>
             </div>
             <div id="profile" class="content-section">
-                <h2>Profile Section</h2>
-                <p>Content for Profile.</p>
+                <div class="profile-container">
+                    <div class="left">
+                        <div class="border">
+                            <div class="border-container">
+                                <img src="/Asset/Profile/border.png" alt="">
+                            </div>
+                            <div class="border-content">
+                                <div class="content-char">
+                                    <img id="cov-char-left" src="/Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead.png" alt="">
+                                </div>
+                                <div class="content-main">
+                                    <table>
+                                        <tr>
+                                            <td><img src="/Asset/Register login/mahkota.png" alt=""></td>
+                                            <td>
+                                                <p id="username">Username</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="/Asset/Register login/tameng.png" alt=""></td>
+                                            <td>
+                                                <p id="email">Email</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><button class="btnstartagn">start again</button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cov-name-left">
+                            <img src="/Asset/Profilee convenant/Darkwhraith/Buku.png" alt="">
+                            <p id="cov-name" class="cov-name">Gravelord Servant</p>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="right-top">
+                            <div class="logo" id="logo">
+                                <img src="/Asset/Profilee convenant/Gravelord Servant/Logo.png" alt="">
+                            </div>
+                            <div class="covenant">
+                                <p id="nickname" class="nickname" >As a fearless leader</p>
+                                <p id="cov-name" class="cov-name">Gravelord Servant</p>
+                            </div>
+                            <div class="logo" id="logo">
+                                <img src="/Asset/Profilee convenant/Gravelord Servant/Logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="right-mid">
+                            <div class="welcome">
+                                <p>Welcome to </p><p id="cov-name">Gravelord Servant</p>
+                            </div>
+                            <div class="cov-desk">
+                                <p id="cov-desk">Gravelord Servant melambangkan kehancuran, kekacauan, dan kematian. Covenant ini
+                                adalah kebalikan dari tema penyembuhan atau perlindungan, menyoroti sisi gelap
+                                dan tak terelakkan dari siklus kehidupan dan kematian.</p>
+                            </div>
+                        </div>
+                        <div class="right-bottom">
+                            <p id="cov-name" class="cov-name">Gravelord Servant</p>
+                            <div class="cov-alliance">
+                                <div class="cov-img-1">
+                                    <img src="/Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead_.png" alt="">
+                                </div>
+                                <div class="cov-img-2">
+                                    <img src="/Asset/Profilee convenant/Gravelord Servant/Necromancer.png" alt="">
+                                </div>
+                                <div class="cov-img-3">
+                                    <img src="/Asset/Profilee convenant/Gravelord Servant/skeleton.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
         function showContent(section) {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach((section) => {
-                section.style.display = 'none';
-            });
+                const sections = document.querySelectorAll('.content-section');
 
-            document.getElementById(section).style.display = 'block';
-        }
+                sections.forEach((sectionElement) => {
+                    if (sectionElement.id === section) {
+                        // Tambahkan kelas aktif dengan sedikit jeda
+                        setTimeout(() => {
+                            sectionElement.classList.add('active');
+                            sectionElement.style.display = 'block';
+                        }, 50);
+                    } else {
+                        // Hapus kelas aktif untuk bagian yang lain
+                        sectionElement.classList.remove('active');
+                        setTimeout(() => {
+                            sectionElement.style.display = 'none';
+                        }, 500); // Sesuaikan durasi dengan CSS transition
+                    }
+                });
 
-        window.onload = function () {
-            showContent('quiz');
-        };
+                // Ubah latar belakang jika diperlukan
+                if (section === 'profile') {
+                    document.body.classList.add('active-profile');
+                } else {
+                    document.body.classList.remove('active-profile');
+                }
+            }
+
+            // Default menampilkan bagian quiz saat halaman dimuat
+            window.onload = function () {
+                showContent('quiz');
+            };
     </script>
 </body>
 

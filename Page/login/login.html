@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <img src="/Asset/Register login/Background Login.png" alt="" class="border">
@@ -22,22 +24,45 @@
                         <tr>
                             <td><img src="/Asset/Register login/mahkota.png" alt=""></td>
                             <td>Username</td>
-                            <td><input type="text" name="" id="username"></td>
+                            <td><input type="text" id="username"></td>
                         </tr>
                         <tr>
                             <td><img src="/Asset/Register login/tameng.png" alt=""></td>
                             <td>Password</td>
-                            <td><input type="password" name="" id="password"></td>
+                            <td><input type="password" id="password"></td>
                         </tr>
                     </table>
-                    <button class="login" type="button" onclick="location.href='/Page/startquiz/startquiz.html'">Login</button>
+                    <button class="login" type="button" id="login-btn">Login</button>
                 </form>
             </div>
             <div class="akun">
                 <p>Belum punya akun?</p>
-                <button class="register" onclick="location.href='/Page/register/register.html'">Register</button>
+                <button class="register" id="register-btn">Register</button>
             </div>
         </div>
     </div>
+
+    <script>
+        const container = document.querySelector('.container');
+        const loginButton = document.getElementById('login-btn');
+        const registerButton = document.getElementById('register-btn');
+
+        // Handle login button click
+        loginButton.addEventListener('click', () => {
+            container.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = '/Page/startquiz/startquiz.html';
+            }, 1000); // Waktu animasi out (1 detik)
+        });
+
+        // Handle register button click
+        registerButton.addEventListener('click', () => {
+            container.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = '/Page/register/register.html';
+            }, 1000); // Waktu animasi out (1 detik)
+        });
+    </script>
 </body>
+
 </html>
