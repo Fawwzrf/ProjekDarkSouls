@@ -34,7 +34,7 @@
                         <td><p id="email">Email</p></td>
                     </tr>
                     <tr>
-                        <td><button class="btnstart" onclick="location.href='/Page/quiz/quiz.html'">Start Quiz</button></td>
+                        <td><button class="btnstart" onclick="location.href='/Page/quiz/quiz.php'">Start Quiz</button></td>
                     </tr>
                 </table>
             </div>

@@ -37,12 +37,12 @@
                             <td><input type="text" name="" id="email"></td>
                         </tr>
                     </table>
-                    <button class="register"type="button" onclick="location.href='/Page/login/login.html'">Register</button>
+                    <button class="register"type="button" onclick="location.href='/Page/login/login.php'">Register</button>
                 </form>
             </div>
             <div class="akun">
                 <p>Sudah punya akun?</p>
-                <button class="login" onclick="location.href='/Page/login/login.html'">Login</button>
+                <button class="login" onclick="location.href='/Page/login/login.php'">Login</button>
             </div>
         </div>
     </div>

@@ -30,12 +30,12 @@
                             <td><input type="password" name="" id="password"></td>
                         </tr>
                     </table>
-                    <button class="login" type="button" onclick="location.href='/Page/startquiz/startquiz.html'">Login</button>
+                    <button class="login" type="button" onclick="location.href='/Page/startquiz/startquiz.php'">Login</button>
                 </form>
             </div>
             <div class="akun">
                 <p>Belum punya akun?</p>
-                <button class="register" onclick="location.href='/Page/register/register.html'">Register</button>
+                <button class="register" onclick="location.href='/Page/register/register.php'">Register</button>
             </div>
         </div>
     </div>
