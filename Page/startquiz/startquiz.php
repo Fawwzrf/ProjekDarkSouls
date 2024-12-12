@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('../../koneksi.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,14 +31,14 @@
                 <table>
                     <tr>
                         <td><img src="/Asset/Register login/mahkota.png" alt=""></td>
-                        <td><p id="username">Username</p></td>
+                        <td><p id="username"><?php echo htmlspecialchars($_SESSION['username']); ?></p></td>
                     </tr>
                     <tr>
                         <td><img src="/Asset/Register login/tameng.png" alt=""></td>
-                        <td><p id="email">Email</p></td>
+                        <td><p id="email"><?php echo htmlspecialchars($_SESSION['email']); ?></p></td>
                     </tr>
                     <tr>
-                        <td><button class="btnstart" onclick="location.href='/Page/quiz/quiz.php'">Start Quiz</button></td>
+                        <td><button class="btnstart" onclick="location.href='../quiz/quiz.php'">Start Quiz</button></td>
                     </tr>
                 </table>
             </div>
