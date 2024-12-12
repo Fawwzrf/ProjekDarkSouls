@@ -20,21 +20,21 @@ include('../../koneksi.php');
     <div class="container">
         <h1>DARK SOULS</h1>
         <div class="border">
-            <img class="border-img" src="/Asset/Profile/border.png" alt="">
-            <img class="border-profil" src="/Asset/Profile/Profile.png" alt="">
+            <img class="border-img" src="../../Asset/Profile/border.png" alt="">
+            <img class="border-profil" src="../../Asset/Profile/Profile.png" alt="">
         </div>
         <div class="content">
             <div class="content-char">
-                <img src="/Asset/Profile/Foto Char.png" alt="">
+                <img src="../../Asset/Profile/Foto Char.png" alt="">
             </div>
             <div class="content-main">
                 <table>
                     <tr>
-                        <td><img src="/Asset/Register login/mahkota.png" alt=""></td>
+                        <td><img src="../../Asset/Register login/mahkota.png" alt=""></td>
                         <td><p id="username"><?php echo htmlspecialchars($_SESSION['username']); ?></p></td>
                     </tr>
                     <tr>
-                        <td><img src="/Asset/Register login/tameng.png" alt=""></td>
+                        <td><img src="../../Asset/Register login/tameng.png" alt=""></td>
                         <td><p id="email"><?php echo htmlspecialchars($_SESSION['email']); ?></p></td>
                     </tr>
                     <tr>

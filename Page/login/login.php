@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <div class="container">
-        <img src="/Asset/Register login/Background Login.png" alt="" class="border">
+        <img src="../../Asset/Register login/Background Login.png" alt="" class="border">
         <div class="content">
             <div class="title">
                 <h3>DARK SOULS</h3>
@@ -53,12 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <form method="POST" action="">
                     <table>
                         <tr>
-                            <td><img src="/Asset/Register login/mahkota.png" alt=""></td>
+                            <td><img src="../../Asset/Register login/mahkota.png" alt=""></td>
                             <td>Username</td>
                             <td><input type="text" name="username" id="username" required></td>
                         </tr>
                         <tr>
-                            <td><img src="/Asset/Register login/tameng.png" alt=""></td>
+                            <td><img src="../../Asset/Register login/tameng.png" alt=""></td>
                             <td>Password</td>
                             <td><input type="password" name="password" id="password" required></td>
                         </tr>
