@@ -59,7 +59,7 @@ include('../../koneksi.php');
                 container.classList.add('fade-out');
 
                 setTimeout(() => {
-                    window.location.href = '../quiz/quiz.php';
+                    window.location.href = '../dashboard/dashboard.php';
                 }, 2000); 
             });
         });

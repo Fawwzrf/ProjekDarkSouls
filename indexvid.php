@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Page</title>
     <style>
-
-        body,
-        html {
+        body, html {
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -26,7 +24,7 @@
             bottom: 20px;
             right: 30px;
             padding: 5px 30px;
-            font-family: OptimusPrincepsSemiBold;
+            font-family: Arial, sans-serif;
             background-color: rgba(67, 34, 38, 0.8);
             color: white;
             border: none;
@@ -52,13 +50,13 @@
         #container.fade-out {
             opacity: 0;
         }
-
     </style>
 </head>
 
 <body>
     <div id="container">
-        <video id="intro-video" autoplay>
+        <!-- Tambahkan atribut autoplay agar video langsung diputar -->
+        <video id="intro-video" playsinline>
             <source src="Asset/Video&Font/IMG_6671.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -70,23 +68,31 @@
         const skipButton = document.getElementById('skip-button');
         const container = document.getElementById('container');
 
-        // Show the skip button after 10 seconds
+        // Memaksa video diputar dengan suara
+        document.addEventListener('DOMContentLoaded', () => {
+            video.muted = false; // Pastikan suara video aktif
+            video.play().catch(() => {
+                console.error("Autoplay gagal. Interaksi pengguna diperlukan.");
+            });
+        });
+
+        // Tampilkan tombol Skip setelah 10 detik
         setTimeout(() => {
             skipButton.style.display = 'block';
         }, 10000);
 
-        // Function to handle fade out and redirect
+        // Fungsi untuk fade-out dan redirect
         const fadeOutAndRedirect = () => {
-            container.classList.add('fade-out'); // Add fade-out class
+            container.classList.add('fade-out');
             setTimeout(() => {
-                window.location.href = 'index.php'; // Redirect after fade out
-            }, 1000); // Match the duration of the CSS transition
+                window.location.href = 'pres.php';
+            }, 1000);
         };
 
-        // Redirect when the video ends
+        // Event ketika video selesai diputar
         video.addEventListener('ended', fadeOutAndRedirect);
 
-        // Redirect when the skip button is clicked
+        // Event ketika tombol Skip diklik
         skipButton.addEventListener('click', fadeOutAndRedirect);
     </script>
 </body>

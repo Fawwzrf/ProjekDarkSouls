@@ -27,7 +27,7 @@
                 <nav class="title">
                     <h1>DARK SOULS</h1>
                 </nav>
-                <nav class="img"><img src="/Asset/Profile/Profile.png" alt=""></nav>
+                <nav class="img"><img src="../../Asset/Profile/Profile.png" alt=""></nav>
             </div>
             <div class="navmenu">
                 <ul>
@@ -63,7 +63,7 @@
                         <button class="btnabout" onclick="showContent('aboutmore')">Read More</button>
                     </div>
                     <div class="aboutimg">
-                        <img src="/Asset/About/char.png" alt="Character Image">
+                        <img src="../../Asset/About/char.png" alt="Character Image">
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                         </ol>
                     </div>
                     <div class="aboutimg">
-                        <img src="/Asset/About/char.png" alt="Character Image">
+                        <img src="../../Asset/About/char.png" alt="Character Image">
                     </div>
                 </div>
             </div>
@@ -98,22 +98,22 @@
                     <div class="left">
                         <div class="border">
                             <div class="border-container">
-                                <img src="/Asset/Profile/border.png" alt="">
+                                <img src="../../Asset/Profile/border.png" alt="">
                             </div>
                             <div class="border-content">
                                 <div class="content-char">
-                                    <img id="cov-char-left" src="/Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead.png" alt="">
+                                    <img id="cov-char-left" src="../../Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead.png" alt="">
                                 </div>
                                 <div class="content-main">
                                     <table>
                                         <tr>
-                                            <td><img src="/Asset/Register login/mahkota.png" alt=""></td>
+                                            <td><img src="../../Asset/Register login/mahkota.png" alt=""></td>
                                             <td>
                                                 <p id="username">Username</p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><img src="/Asset/Register login/tameng.png" alt=""></td>
+                                            <td><img src="../../Asset/Register login/tameng.png" alt=""></td>
                                             <td>
                                                 <p id="email">Email</p>
                                             </td>
@@ -126,21 +126,21 @@
                             </div>
                         </div>
                         <div class="cov-name-left">
-                            <img src="/Asset/Profilee convenant/Darkwhraith/Buku.png" alt="">
+                            <img src="../../Asset/Profilee convenant/Darkwhraith/Buku.png" alt="">
                             <p id="cov-name" class="cov-name">Gravelord Servant</p>
                         </div>
                     </div>
                     <div class="right">
                         <div class="right-top">
                             <div class="logo" id="logo">
-                                <img src="/Asset/Profilee convenant/Gravelord Servant/Logo.png" alt="">
+                                <img src="../../Asset/Profilee convenant/Gravelord Servant/Logo.png" alt="">
                             </div>
                             <div class="covenant">
                                 <p id="nickname" class="nickname" >As a fearless leader</p>
                                 <p id="cov-name" class="cov-name">Gravelord Servant</p>
                             </div>
                             <div class="logo" id="logo">
-                                <img src="/Asset/Profilee convenant/Gravelord Servant/Logo.png" alt="">
+                                <img src="../../Asset/Profilee convenant/Gravelord Servant/Logo.png" alt="">
                             </div>
                         </div>
                         <div class="right-mid">
@@ -157,13 +157,13 @@
                             <p id="cov-name" class="cov-name">Gravelord Servant</p>
                             <div class="cov-alliance">
                                 <div class="cov-img-1">
-                                    <img src="/Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead_.png" alt="">
+                                    <img src="../../Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead_.png" alt="">
                                 </div>
                                 <div class="cov-img-2">
-                                    <img src="/Asset/Profilee convenant/Gravelord Servant/Necromancer.png" alt="">
+                                    <img src="../../Asset/Profilee convenant/Gravelord Servant/Necromancer.png" alt="">
                                 </div>
                                 <div class="cov-img-3">
-                                    <img src="/Asset/Profilee convenant/Gravelord Servant/skeleton.png" alt="">
+                                    <img src="../../Asset/Profilee convenant/Gravelord Servant/skeleton.png" alt="">
                                 </div>
                             </div>
                         </div>
