@@ -47,12 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $stmt->close();
 
-    // Redirect ke soal berikutnya
-    $nextQuestionId = $currentQuestionId + 1;
-    header("Location: ?question_id=$nextQuestionId");
+    // Respon kosong untuk fetch
     exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,32 +62,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Quintessential&display=swap"
         rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Dark Souls</h1>
-        <form method="POST" action="">
         <div class="quiz">
             <div class="question">
                 <p><?= htmlspecialchars($question['question_text']) ?></p>
+            </div>
+            <div class="answers">
                 <?php while ($answer = $answersResult->fetch_assoc()): ?>
-                </div>
-                
-                <div class="answer">
-                    <label>
-                        <input type="radio" name="answer" value="<?= $answer['id'] ?>" required>
+                    <div class="answer-box" data-answer-id="<?= $answer['id'] ?>">
                         <?= htmlspecialchars($answer['answer_text']) ?>
-                    </label>
+                    </div>
                 <?php endwhile; ?>
             </div>
-                </div>
-            <button type="submit">Kirim Jawaban</button>
-        </form>
+        </div>
     </div>
+    <script>
+        document.querySelectorAll('.answer-box').forEach(box => {
+            box.addEventListener('click', function () {
+                const answerId = this.getAttribute('data-answer-id');
+                const questionId = <?= $currentQuestionId ?>;
+
+                // Kirim jawaban ke server menggunakan fetch
+                fetch('', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: `answer=${answerId}&question_id=${questionId}`
+                })
+                .then(response => response.text())
+                .then(() => {
+                    // Arahkan ke soal berikutnya
+                    window.location.href = `?question_id=${questionId + 1}`;
+                })
+                .catch(error => console.error('Error:', error));
+            });
+        });
+    </script>
 </body>
 </html>
 

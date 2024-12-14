@@ -12,15 +12,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = mysqli_query($koneksi, $check_query);
 
     if (mysqli_num_rows($result) > 0) {
-        $error = "Pendaftaran gagal. Username atau email sudah digunakan.";
+        $error = "Registrasi gagal! Username atau email sudah digunakan.";
     } else {
         // Insert data ke tabel users
         $insert_query = "INSERT INTO user (username, email, password) VALUES ('$username', '$email', '$password')";
         if (mysqli_query($koneksi, $insert_query)) {
-            header('Location: ../login/login.php');
-            exit();
+            $success = "Registrasi Berhasil! Anda akan diarahkan ke halaman login.";
         } else {
-            $error = "Pendaftaran gagal. Silakan coba lagi.";
+            $error = "Registrasi gagal! Periksa data yang anda masukkan!";
         }
     }
 }
@@ -48,25 +47,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h3>DARK SOULS</h3>
             </div>
             <div class="form">
-                <form action="">
+                <form method="POST" action="">
                     <table>
                         <tr>
                             <td><img src="../../Asset/Register login/mahkota.png" alt=""></td>
                             <td>Username</td>
-                            <td><input type="text" id="username" name="username"></td>
+                            <td><input type="text" id="username" name="username" required></td>
                         </tr>
                         <tr>
                             <td><img src="../../Asset/Register login/tameng.png" alt=""></td>
                             <td>Password</td>
-                            <td><input type="password" id="password" name="password"></td>
+                            <td><input type="password" id="password" name="password" required></td>
                         </tr>
                         <tr>
                             <td><img src="../../Asset/Register login/Pedang.png" alt="" id="pdg"></td>
                             <td>Email</td>
-                            <td><input type="text" id="email" name="email"></td>
+                            <td><input type="text" id="email" name="email" required></td>
                         </tr>
                     </table>
-                    <button class="register" type="button" id="register-btn">Register</button>
+                    <button class="register" type="submit" id="register-btn">Register</button>
                 </form>
             </div>
             <div class="akun">
@@ -76,30 +75,59 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <p id="popupMessage"></p>
+        <button id="popupButton">OK</button>
+    </div>
+
     <script>
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        const popupMessage = document.getElementById('popupMessage');
+        const popupButton = document.getElementById('popupButton');
         const container = document.querySelector('.container');
-        const registerButton = document.getElementById('register-btn');
-        const loginButton = document.getElementById('login-btn');
         const buttonSound = document.getElementById('button-sound');
+        const loginButton = document.getElementById('login-btn');
 
-        // Handle Register button click
-        registerButton.addEventListener('click', () => {
+        popupButton.addEventListener('click', function() {
+            const isSuccess = popup.dataset.success === 'true';
+            if (isSuccess) {
+                buttonSound.play().catch(error => console.error("Audio tidak dapat diputar:", error));
+                container.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = '../login/login.php';
+                }, 1000);
+            }
+
+            popup.classList.remove('show');
+            overlay.classList.remove('show');
+        });
+
+        loginButton.addEventListener('click', function() {
             buttonSound.play().catch(error => console.error("Audio tidak dapat diputar:", error));
             container.classList.add('fade-out');
             setTimeout(() => {
                 window.location.href = '../login/login.php';
-            }, 1000); // Durasi animasi keluar
+            }, 1000);
         });
 
-        // Handle Login button click
-        loginButton.addEventListener('click', () => {
-            buttonSound.play().catch(error => console.error("Audio tidak dapat diputar:", error));
-            container.classList.add('fade-out');
-            setTimeout(() => {
-                window.location.href = '../login/login.php';
-            }, 1000); // Durasi animasi keluar
+        <?php if (isset($success)) { ?>
+        document.addEventListener('DOMContentLoaded', function() {
+            popupMessage.textContent = "<?php echo $success; ?>";
+            popup.dataset.success = 'true';
+            popup.classList.add('show');
+            overlay.classList.add('show');
         });
+        <?php } elseif (isset($error)) { ?>
+        document.addEventListener('DOMContentLoaded', function() {
+            popupMessage.textContent = "<?php echo $error; ?>";
+            popup.dataset.success = 'false';
+            popup.classList.add('show');
+            overlay.classList.add('show');
+        });
+        <?php } ?>
     </script>
 </body>
+
 </html>
-<?php if (isset($error)) echo "<p>$error</p>"; ?>

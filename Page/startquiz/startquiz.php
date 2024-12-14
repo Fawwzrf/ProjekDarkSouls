@@ -25,15 +25,15 @@ include('../../koneksi.php');
             <div class="content-main">
                 <table>
                     <tr>
-                        <td><img src="../../Asset/Register login/mahkota.png" alt="Mahkota"></td>
+                        <td><img src="../../Asset/Register login/mahkota.png" alt="Mahkota" class="icon"></td>
                         <td>
-                            <p id="username"><?php echo htmlspecialchars($_SESSION['username']); ?></p>
+                            <p id="username" class="info-text"><?php echo htmlspecialchars($_SESSION['username']); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="../../Asset/Register login/tameng.png" alt="Tameng"></td>
+                        <td><img src="../../Asset/Register login/tameng.png" alt="Tameng" class="icon"></td>
                         <td>
-                            <p id="email"><?php echo htmlspecialchars($_SESSION['email']); ?></p>
+                            <p id="email" class="info-text"><?php echo htmlspecialchars($_SESSION['email']); ?></p>
                         </td>
                     </tr>
                     <tr>

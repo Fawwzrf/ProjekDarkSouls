@@ -177,3 +177,15 @@ p {
 .container.fade-out {
     animation: fade-all 3s forwards;
 }
+
+.icon {
+    margin-right: 10px; /* Memberikan jarak antara gambar dan teks */
+    vertical-align: middle; /* Menyelaraskan gambar dengan teks */
+}
+
+.info-text {
+    display: inline-block; /* Membuat teks berada di sebelah gambar */
+    vertical-align: middle; /* Menyelaraskan teks dengan gambar */
+    margin: 0; /* Menghilangkan margin default */
+    padding-left: 5px; /* Menambahkan padding kiri opsional */
+}
