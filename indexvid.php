@@ -58,8 +58,8 @@
 
 <body>
     <div id="container">
-        <video id="intro-video" autoplay muted>
-            <source src="Asset\Video&Font\IMG_6671.mp4" type="video/mp4">
+        <video id="intro-video" autoplay>
+            <source src="Asset/Video&Font/IMG_6671.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <button id="skip-button">Skip</button>
@@ -79,7 +79,7 @@
         const fadeOutAndRedirect = () => {
             container.classList.add('fade-out'); // Add fade-out class
             setTimeout(() => {
-                window.location.href = 'index.html'; // Redirect after fade out
+                window.location.href = 'index.php'; // Redirect after fade out
             }, 1000); // Match the duration of the CSS transition
         };
 

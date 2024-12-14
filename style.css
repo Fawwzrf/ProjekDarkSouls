@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/Asset/DarkSoul/Background.png');
+    background-image: url('Asset/DarkSoul/Background.png');
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,12 +14,12 @@ body {
 
 @font-face {
     font-family: 'OptimusPrincepsSemiBold';
-    src: url('/Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
+    src: url('Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OptimusPrinceps';
-    src: url('/Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
+    src: url('Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
 }
 
 .container {

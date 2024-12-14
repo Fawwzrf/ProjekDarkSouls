@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/Asset/Profile/Background.png');
+    background-image: url('../../Asset/Profile/Background.png');
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;

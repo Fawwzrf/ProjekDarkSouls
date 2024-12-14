@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/Asset/Quiz/background.png');
+    background-image: url('../../Asset/Quiz/background.png');
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,22 +15,22 @@ body {
 
 @font-face {
     font-family: 'OptimusPrincepsSemiBold';
-    src: url('/Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OptimusPrinceps';
-    src: url('/Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Oranienbaum';
-    src: url('/Asset/Video&Font/Oranienbaum.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/Oranienbaum.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Papyrus';
-    src: url('/Asset/Video&Font/papyrus.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/papyrus.ttf') format('truetype');
 }
 
 .container {

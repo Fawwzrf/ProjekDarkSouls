@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/Asset/Register\ login/Backgroundd.png');
+    background-image: url('../../Asset/Register\ login/Backgroundd.png');
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
@@ -113,6 +113,7 @@ table input {
     padding-right: 4.557vmax;
     border-radius: 1.302vmax;
     margin: 3.255vmax;
+    cursor: pointer;
 }
 
 .akun {
@@ -131,4 +132,5 @@ table input {
     padding-left: 0.651vmax;
     padding-right: 0.651vmax;
     border-radius: 1.302vmax;
+    cursor: pointer;
 }

@@ -1,3 +1,7 @@
+<?php
+session_start();
+include('../../koneksi.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,24 +16,24 @@
     <div class="container">
         <h1 class="title">DARK SOULS</h1>
         <div class="border">
-            <img class="border-img" src="/Asset/Profile/border.png" alt="Border">
+            <img class="border-img" src="../../Asset/Profile/border.png" alt="Border">
         </div>
         <div class="content">
             <div class="content-char">
-                <img src="/Asset/Profile/Foto Char.png" alt="Character">
+                <img src="../../Asset/Profile/Foto Char.png" alt="Character">
             </div>
             <div class="content-main">
                 <table>
                     <tr>
-                        <td><img src="/Asset/Register login/mahkota.png" alt="Mahkota"></td>
+                        <td><img src="../../Asset/Register login/mahkota.png" alt="Mahkota"></td>
                         <td>
-                            <p id="username">Username</p>
+                            <p id="username"><?php echo htmlspecialchars($_SESSION['username']); ?></p>
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="/Asset/Register login/tameng.png" alt="Tameng"></td>
+                        <td><img src="../../Asset/Register login/tameng.png" alt="Tameng"></td>
                         <td>
-                            <p id="email">Email</p>
+                            <p id="email"><?php echo htmlspecialchars($_SESSION['email']); ?></p>
                         </td>
                     </tr>
                     <tr>
@@ -42,16 +46,20 @@
         </div>
     </div>
 
+    <audio id="button-sound" src="../../Asset/Video&Font/sound start.mp3"></audio>
+
     <!-- Tambahkan script di sini -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const buttonSound = document.getElementById('button-sound');
+
             document.querySelector('.btnstart').addEventListener('click', () => {
                 const container = document.querySelector('.container');
-                console.log(container); // Memastikan elemen ditemukan
+                buttonSound.play().catch(error => console.error("Audio tidak dapat diputar:", error));
                 container.classList.add('fade-out');
 
                 setTimeout(() => {
-                    window.location.href = '/Page/quiz/quiz.html';
+                    window.location.href = '../quiz/quiz.php';
                 }, 2000); 
             });
         });

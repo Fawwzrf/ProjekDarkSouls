@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('/Asset/Register\ login/Backgroundd.png');
+    background-image: url('../../Asset/Register\ login/Backgroundd.png');
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
@@ -13,12 +13,12 @@ body {
 
 @font-face {
     font-family: 'OptimusPrincepsSemiBold';
-    src: url('/Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OptimusPrinceps';
-    src: url('/Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
 }
 
 .container {
@@ -122,6 +122,7 @@ table input {
     padding-right: 4.557vmax;
     border-radius: 1.302vmax;
     margin: 3.255vmax;
+    cursor: pointer;
 }
 
 .akun {
@@ -140,4 +141,5 @@ table input {
     padding-left: 0.651vmax;
     padding-right: 0.651vmax;
     border-radius: 1.302vmax;
+    cursor: pointer;
 }
