@@ -16,22 +16,22 @@ body {
 
 @font-face {
     font-family: 'OptimusPrincepsSemiBold';
-    src: url('/Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/OptimusPrincepsSemiBold.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'OptimusPrinceps';
-    src: url('/Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/OptimusPrinceps.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Oranienbaum';
-    src: url('/Asset/Video&Font/Oranienbaum.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/Oranienbaum.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Papyrus';
-    src: url('/Asset/Video&Font/papyrus.ttf') format('truetype');
+    src: url('../../Asset/Video&Font/papyrus.ttf') format('truetype');
 }
 .nav {
     display: flex;
