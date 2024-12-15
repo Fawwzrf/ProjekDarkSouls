@@ -10,6 +10,8 @@ if (!isset($_SESSION['user_id'])) {
     $_SESSION['username'] = 'Tester';
 }
 
+$userId = $_SESSION['user_id'];
+
 // Ambil ID soal saat ini dari parameter URL, default ke soal pertama jika tidak ada
 $currentQuestionId = isset($_GET['question_id']) ? (int)$_GET['question_id'] : 1;
 
@@ -24,7 +26,7 @@ $stmt->close();
 
 if (!$question) {
     // Jika tidak ada soal dengan ID tersebut, redirect ke halaman hasil
-    header('Location: result.php');
+    header('Location:../dashboard/dashboard.php');
     exit();
 }
 
@@ -39,15 +41,15 @@ $stmt->close();
 // Proses pengiriman jawaban
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $answer_id = $_POST['answer'];
-    $user_id = $_SESSION['user_id'];
 
     // Masukkan jawaban ke tabel user_answers
     $stmt = $conn->prepare("INSERT INTO user_answers (user_id, question_id, answer_id) VALUES (?, ?, ?)");
-    $stmt->bind_param('iii', $user_id, $currentQuestionId, $answer_id);
+    $stmt->bind_param('iii', $userId, $currentQuestionId, $answer_id);
     $stmt->execute();
     $stmt->close();
 
-    // Respon kosong untuk fetch
+    // Redirect ke soal berikutnya
+    header('Location: quiz.php?question_id=' . ($currentQuestionId + 1));
     exit();
 }
 ?>
@@ -66,6 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         rel="stylesheet">
 </head>
 <body>
+    <form method="POST">
     <div class="container">
         <h1>Dark Souls</h1>
         <div class="quiz">
@@ -81,6 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </div>
+    </form>
     <script>
         document.querySelectorAll('.answer-box').forEach(box => {
             box.addEventListener('click', function () {

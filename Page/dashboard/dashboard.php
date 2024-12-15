@@ -1,3 +1,48 @@
+<?php
+$conn = new mysqli('localhost', 'root', '', 'darksouls');
+if ($conn->connect_error) {
+    die("Koneksi gagal: " . $conn->connect_error);
+}
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
+$userId = $_SESSION['user_id'];
+
+// Hitung poin untuk setiap covenant berdasarkan jawaban pengguna
+$stmt = $conn->prepare("
+    SELECT a.covenant_id, SUM(a.weight) AS total_points
+    FROM user_answers ua
+    JOIN answers a ON ua.answer_id = a.id
+    WHERE ua.user_id = ?
+    GROUP BY a.covenant_id
+    ORDER BY total_points DESC
+    LIMIT 1
+");
+$stmt->bind_param('i', $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+$covenantData = $result->fetch_assoc();
+$stmt->close();
+
+if ($covenantData && $covenantData['covenant_id']) {
+    // Ambil nama dan deskripsi covenant yang cocok
+    $stmt = $conn->prepare("SELECT name, description FROM covenants WHERE id = ?");
+    $stmt->bind_param('i', $covenantData['covenant_id']);
+    $stmt->execute();
+    $covenant = $stmt->get_result()->fetch_assoc();
+    $stmt->close();
+} else {
+    // Jika tidak ada hasil
+    $covenant = [
+        'name' => 'Tidak Diketahui',
+        'description' => 'Jawaban Anda tidak cocok dengan covenant manapun. Pastikan Anda menyelesaikan kuis atau coba lagi.'
+    ];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +56,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Quintessential&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Quintessential&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Oranienbaum&family=Quintessential&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Oranienbaum&family=Quintessential&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -40,15 +87,15 @@
         <div class="content">
             <div id="quiz" class="content-section">
                 <div class="quizcontain">
-                <div class="quiz-title">
-                    <h1>Which Convenant</h1>
-                    <h3>Do You Belong To?</h3>
-                </div>
-                <button class="btnquiz">Start the quiz</button>
-                <div class="quiz-desk">
-                    <p>Are you destinted be a blade of vengance</p>
-                    <p>or a someone on the flame</p>
-                </div>
+                    <div class="quiz-title">
+                        <h1>Which Convenant</h1>
+                        <h3>Do You Belong To?</h3>
+                    </div>
+                    <button class="btnquiz" onclick="window.location.href='../quiz/quiz.php'">Start The Quiz</button>
+                    <div class="quiz-desk">
+                        <p>Are you destinted be a blade of vengance</p>
+                        <p>or a someone on the flame</p>
+                    </div>
                 </div>
             </div>
             <div id="about" class="content-section">
@@ -72,9 +119,9 @@
                     <h2>Apa itu Covenant di Dark Souls?</h2>
                     <div class="abouttext">
                         <p>Covenant adalah fraksi atau kelompok dalam Dark Souls yang menawarkan mekanika permainan
-                        khusus, hadiah unik, dan lore yang mendalam. Bergabung dengan covenant mencerminkan pilihan
-                        moral atau takdir pemain di dunia gelap dan penuh bahaya Lordran, Drangleic, atau Lothric. 
-                        Beberapa Covenant yang ditampilkan:</p>
+                            khusus, hadiah unik, dan lore yang mendalam. Bergabung dengan covenant mencerminkan pilihan
+                            moral atau takdir pemain di dunia gelap dan penuh bahaya Lordran, Drangleic, atau Lothric.
+                            Beberapa Covenant yang ditampilkan:</p>
                         <ol>
                             <li>Warrior Of Sunlight</li>
                             <li>Princess's Guard</li>
@@ -94,7 +141,7 @@
             </div>
             <div id="profile" class="content-section">
                 <div class="profile-container">
-                    
+
                     <div class="left">
                         <div class="border">
                             <div class="border-container">
@@ -102,24 +149,31 @@
                             </div>
                             <div class="border-content">
                                 <div class="content-char">
-                                    <img id="cov-char-left" src="../../Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead.png" alt="">
+                                    <img id="cov-char-left"
+                                        src="../../Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead.png"
+                                        alt="">
                                 </div>
                                 <div class="content-main">
                                     <table>
                                         <tr>
                                             <td><img src="../../Asset/Register login/mahkota.png" alt=""></td>
                                             <td>
-                                                <p id="username">Username</p>
+                                                <p id="username" class="info-text">
+                                                    <?php echo htmlspecialchars($_SESSION['username']); ?></p>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td><img src="../../Asset/Register login/tameng.png" alt=""></td>
                                             <td>
-                                                <p id="email">Email</p>
+                                                <p id="email" class="info-text">
+                                                    <?php echo htmlspecialchars($_SESSION['email']); ?></p>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td><button class="btnstartagn">start again</button></td>
+                                            <td><button class="btnstartagn"
+                                                    onclick="window.location.href='../quiz/quiz.php'">Start
+                                                    Again</button>
+                                            </td>
                                         </tr>
                                     </table>
                                 </div>
@@ -136,7 +190,7 @@
                                 <img src="../../Asset/Profilee convenant/Gravelord Servant/Logo.png" alt="">
                             </div>
                             <div class="covenant">
-                                <p id="nickname" class="nickname" >As a fearless leader</p>
+                                <p id="nickname" class="nickname">As a fearless leader</p>
                                 <p id="cov-name" class="cov-name">Gravelord Servant</p>
                             </div>
                             <div class="logo" id="logo">
@@ -145,19 +199,22 @@
                         </div>
                         <div class="right-mid">
                             <div class="welcome">
-                                <p>Welcome to </p><p id="cov-name">Gravelord Servant</p>
+                                <p>Welcome to </p>
+                                <p id="cov-name">Gravelord Servant</p>
                             </div>
                             <div class="cov-desk">
-                                <p id="cov-desk">Gravelord Servant melambangkan kehancuran, kekacauan, dan kematian. Covenant ini
-                                adalah kebalikan dari tema penyembuhan atau perlindungan, menyoroti sisi gelap
-                                dan tak terelakkan dari siklus kehidupan dan kematian.</p>
+                                <p id="cov-desk">Gravelord Servant melambangkan kehancuran, kekacauan, dan kematian.
+                                    Covenant ini
+                                    adalah kebalikan dari tema penyembuhan atau perlindungan, menyoroti sisi gelap
+                                    dan tak terelakkan dari siklus kehidupan dan kematian.</p>
                             </div>
                         </div>
                         <div class="right-bottom">
                             <p id="cov-name" class="cov-name">Gravelord Servant</p>
                             <div class="cov-alliance">
                                 <div class="cov-img-1">
-                                    <img src="../../Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead_.png" alt="">
+                                    <img src="../../Asset/Profilee convenant/Gravelord Servant/Nito, First of the Dead_.png"
+                                        alt="">
                                 </div>
                                 <div class="cov-img-2">
                                     <img src="../../Asset/Profilee convenant/Gravelord Servant/Necromancer.png" alt="">
@@ -175,36 +232,37 @@
 
     <script>
         function showContent(section) {
-                const sections = document.querySelectorAll('.content-section');
+            const sections = document.querySelectorAll('.content-section');
 
-                sections.forEach((sectionElement) => {
-                    if (sectionElement.id === section) {
-                        // Tambahkan kelas aktif dengan sedikit jeda
-                        setTimeout(() => {
-                            sectionElement.classList.add('active');
-                            sectionElement.style.display = 'block';
-                        }, 50);
-                    } else {
-                        // Hapus kelas aktif untuk bagian yang lain
-                        sectionElement.classList.remove('active');
-                        setTimeout(() => {
-                            sectionElement.style.display = 'none';
-                        }, 500); // Sesuaikan durasi dengan CSS transition
-                    }
-                });
-
-                // Ubah latar belakang jika diperlukan
-                if (section === 'profile') {
-                    document.body.classList.add('active-profile');
+            sections.forEach((sectionElement) => {
+                if (sectionElement.id === section) {
+                    // Tambahkan kelas aktif dengan sedikit jeda
+                    setTimeout(() => {
+                        sectionElement.classList.add('active');
+                        sectionElement.style.display = 'block';
+                    }, 50);
                 } else {
-                    document.body.classList.remove('active-profile');
+                    // Hapus kelas aktif untuk bagian yang lain
+                    sectionElement.classList.remove('active');
+                    setTimeout(() => {
+                        sectionElement.style.display = 'none';
+                    }, 500); // Sesuaikan durasi dengan CSS transition
                 }
-            }
+            });
 
-            // Default menampilkan bagian quiz saat halaman dimuat
-            window.onload = function () {
-                showContent('quiz');
-            };
+            // Ubah latar belakang jika diperlukan
+            if (section === 'profile') {
+                document.body.classList.add('active-profile');
+            } else {
+                document.body.classList.remove('active-profile');
+            }
+        }
+
+        // Default menampilkan bagian quiz saat halaman dimuat
+        window.onload = function () {
+            showContent('quiz');
+        };
     </script>
 </body>
+
 </html>
